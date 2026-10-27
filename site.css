@@ -66,7 +66,7 @@ h3,h4{margin:0;font-family:var(--sans);font-weight:400;font-size:clamp(20px,1.7v
 .nav-bar{position:relative;max-width:calc(var(--max) - 2*var(--g));margin:0 max(16px,env(safe-area-inset-left,0px));height:64px;background:var(--white);border-radius:0 0 14px 14px;display:flex;align-items:center;gap:40px;padding:0 20px}
 @media (min-width:760px){.nav-bar{margin:0 max(var(--g),env(safe-area-inset-left,0px))}}
 @media (min-width:1864px){.nav-bar{margin:0 auto}}
-.logo{font:500 20px/1 var(--sans);letter-spacing:-.04em;text-decoration:none;white-space:nowrap}
+.logo{font:700 22px/1 'Inter Logo',Inter,var(--sans);letter-spacing:-.01em;color:#000;text-decoration:none;white-space:nowrap}
 .logo sup{font-size:9px;letter-spacing:0;vertical-align:10px;margin-left:1px}
 /* desktop menu: three groups with dropdown panels */
 .nav-links{display:flex;gap:4px;list-style:none;margin:0;padding:0}
@@ -123,14 +123,14 @@ h3,h4{margin:0;font-family:var(--sans);font-weight:400;font-size:clamp(20px,1.7v
 .hx-head h1{max-width:13ch}
 .hx-row{display:flex;justify-content:center;align-items:flex-start;gap:16px;margin-top:clamp(48px,6vw,72px);overflow:hidden;padding-bottom:4px}
 .hx-row figure{margin:0;flex:none;height:clamp(240px,46svh,420px);aspect-ratio:330/420;border-radius:20px;overflow:hidden;position:relative}
-.hx-row figure img{width:100%;height:100%;object-fit:cover}
+.hx-row figure img,.hx-row figure video{width:100%;height:100%;object-fit:cover;display:block}
 .hx-row figure:nth-child(2n){margin-top:12px}
 .hx-row figure[data-origin]{margin-top:32px}
 .hx-fill{display:none}
 html.anim .hx{height:260vh;padding:0}
 html.anim .hx-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding-top:64px}
 html.anim .hx-fill{display:block;position:absolute;z-index:3;overflow:hidden;border-radius:20px}
-.hx-fill img{width:100%;height:100%;object-fit:cover}
+.hx-fill img,.hx-fill video{width:100%;height:100%;object-fit:cover;display:block}
 .hx-shade{position:absolute;inset:0;background:rgba(25,24,24,.58);opacity:0}
 .hx-lines{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--paper);padding:24px}
 .hx-lines p{grid-area:1/1;font-family:var(--serif);font-weight:300;font-size:clamp(32px,4vw,56px);line-height:1.12;letter-spacing:-.045em;max-width:20ch;opacity:0;text-wrap:balance}
@@ -184,7 +184,7 @@ html.anim .hx-fill{display:block;position:absolute;z-index:3;overflow:hidden;bor
 /* image with overlapping card */
 .ov{position:relative}
 .ov-img{height:clamp(420px,62vw,900px);overflow:hidden}
-.ov-img img{width:100%;height:100%;object-fit:cover}
+.ov-img img,.ov-img video{width:100%;height:100%;object-fit:cover;display:block}
 .ov-card{position:relative;z-index:2;max-width:1140px;margin:-200px auto 0;background:var(--p4);border-radius:20px;padding:clamp(28px,4vw,48px);display:grid;gap:22px}
 .ov-card p{color:var(--text-2);max-width:72ch}
 @media (max-width:760px){.ov-card{margin:-120px 16px 0}}
@@ -212,8 +212,8 @@ html.anim .hx-fill{display:block;position:absolute;z-index:3;overflow:hidden;bor
 .checks b{display:block;font-weight:500;margin-bottom:8px}
 .checks p{color:var(--text-2);max-width:44ch}
 .how .img{border-radius:20px;overflow:hidden;min-height:480px}
-.how .img img{width:100%;height:100%;object-fit:cover}
-@media (max-width:900px){.how{grid-template-columns:1fr}.how .img{min-height:0;aspect-ratio:4/3}}
+.how .img img,.how .img video{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:900px){.how{grid-template-columns:1fr}.how .img{min-height:0;aspect-ratio:4/3}.how .img:has(video){aspect-ratio:4/5}}
 
 /* dark tabbed system: numbered tabs with progress, crossfading images, panels stacked so the height never jumps */
 .sys{display:grid;grid-template-columns:minmax(220px,.9fr) minmax(0,1.15fr) minmax(0,1fr);gap:clamp(24px,3vw,56px);align-items:stretch}
@@ -278,7 +278,7 @@ html.anim .sys.pinned .sys-hint{display:inline}
 
 /* text over full image */
 .vt{position:relative;min-height:clamp(560px,80vh,860px);display:grid;place-items:center;text-align:center;color:var(--paper);overflow:hidden}
-.vt > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vt > img,.vt > video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .vt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(25,24,24,.35),rgba(25,24,24,.55) 70%,var(--ink))}
 .vt .in{position:relative;z-index:1;display:grid;gap:28px;justify-items:center;padding:80px 20px}
 .vt p.big{font-family:var(--serif);font-weight:300;font-size:clamp(30px,3.6vw,52px);line-height:1.15;letter-spacing:-.045em;max-width:24ch}
@@ -307,7 +307,7 @@ html.anim .sys.pinned .sys-hint{display:inline}
 /* image CTA */
 .cta{position:relative;border-radius:20px;overflow:hidden;min-height:clamp(480px,46vw,640px);display:grid;place-items:center;text-align:center;color:var(--paper);padding:48px 20px}
 .cta > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.cta::after{content:"";position:absolute;inset:0;background:rgba(25,24,24,.42)}
+.cta::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 50% 50%,rgba(25,24,24,.62),rgba(25,24,24,.4))}
 .cta .in{position:relative;z-index:1;display:grid;gap:32px;justify-items:center}
 .cta h2{max-width:16ch}
 
@@ -323,7 +323,7 @@ footer{padding-top:clamp(64px,7vw,96px);overflow:hidden}
 .fr a:hover{color:var(--accent)}
 .wm{margin-top:clamp(64px,8vw,120px);overflow:hidden}
 .wm-row{display:flex;width:max-content;animation:mq 40s linear infinite}
-.wm-row span{font:500 clamp(110px,19vw,340px)/.9 var(--sans);letter-spacing:-.06em;padding-right:.25em;white-space:nowrap}
+.wm-row span{font:700 clamp(100px,17vw,300px)/.9 'Inter Logo',Inter,var(--sans);letter-spacing:-.03em;padding-right:.25em;white-space:nowrap}
 .wm-row sup{font-size:.25em;vertical-align:1.6em;letter-spacing:0;margin-left:.04em}
 .fb{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-block:24px 32px;font-size:13px;color:var(--text-2)}
 .fb nav{display:flex;gap:20px;flex-wrap:wrap}
@@ -603,3 +603,6 @@ html.anim.hx-done .hx-row{margin-top:clamp(48px,6vw,72px)}
   html.anim .sys-tabs button{padding:14px 0}
 }
 @media (max-width:640px){html.anim .wrap:has(> .sys) > .head > p{display:none}}
+
+/* video background in the closing call-to-action */
+.cta > video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:var(--ink)}

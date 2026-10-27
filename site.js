@@ -50,6 +50,14 @@
     e.preventDefault();t.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
   });
 
+  // closing video: still frame for reduced motion; otherwise play only while it is on screen
+  document.querySelectorAll('.bgvid').forEach(function(v){
+    var still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(still){v.removeAttribute('autoplay');v.pause();return;}
+    if('IntersectionObserver'in window){new IntersectionObserver(function(es){es.forEach(function(en){
+      if(en.isIntersecting){var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});}else v.pause();});},{threshold:.15}).observe(v);}
+  });
+
   var hasG=typeof window.gsap!=='undefined'&&typeof window.ScrollTrigger!=='undefined';
   var calm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var motion=hasG&&!calm;
@@ -115,7 +123,7 @@
       var R=function(){var x=0,y=0,e=origin;while(e&&e!==stage){x+=e.offsetLeft;y+=e.offsetTop;e=e.offsetParent;}return{l:x,t:y,w:origin.offsetWidth,h:origin.offsetHeight};};
       if(hasSplit){var sp=SplitText.create(h1,{type:'words'});h1._words=sp.words;gsap.fromTo(sp.words,{opacity:.12},{opacity:1,duration:.9,ease:'power2.out',stagger:.14,delay:.15});}
       gsap.from([row,fill],{y:90,opacity:0,duration:1.3,ease:'power4.out',delay:.25,clearProps:'transform'});
-      var heroTargets=[head,row,fill,fill.querySelector('img'),shade].concat([].slice.call(sides)).concat([].slice.call(lines));
+      var heroTargets=[head,row,fill,fill.querySelector('img,video'),shade].concat([].slice.call(sides)).concat([].slice.call(lines));
       var heroScroll=function(){
       var tl=gsap.timeline({scrollTrigger:{trigger:hx,start:'top top',end:'bottom bottom',scrub:.8,invalidateOnRefresh:true}});
       // once the hero is completely off screen, settle it into its normal layout so scrolling back up is quick
@@ -133,7 +141,7 @@
         .to(sides,{opacity:0,y:40,duration:.22,stagger:{each:.025,from:'center'},ease:'none'},0)
         .fromTo(fill,{left:function(){return R().l;},top:function(){return R().t;},width:function(){return R().w;},height:function(){return R().h;},borderRadius:20},
                      {left:0,top:0,width:function(){return stage.clientWidth;},height:function(){return stage.clientHeight;},borderRadius:0,duration:.34,ease:'power2.inOut'},.1)
-        .fromTo(fill.querySelector('img'),{scale:1.25},{scale:1,duration:.34,ease:'power2.inOut'},.1)
+        .fromTo(fill.querySelector('img,video'),{scale:1.25},{scale:1,duration:.34,ease:'power2.inOut'},.1)
         .to(shade,{opacity:1,duration:.14,ease:'none'},.34)
         .fromTo(lines[0],{opacity:0,y:50},{opacity:1,y:0,duration:.1,ease:'power2.out'},.46)
         .to(lines[0],{opacity:0,y:-50,duration:.09,ease:'power2.in'},.66)
@@ -176,7 +184,7 @@
     });
 
     // slow parallax inside image frames
-    document.querySelectorAll('.cs-fig img, .feat .img img, .ph-img img, .ov-img img, .cta > img, .vt > img, .how .img img, .ac img, .stat.img > img').forEach(function(im){
+    document.querySelectorAll('.cs-fig img, .feat .img img, .ph-img img, .ov-img img, .ov-img video, .cta > img, .cta > video, .vt > img, .vt > video, .how .img img, .how .img video, .ac img, .stat.img > img').forEach(function(im){
       gsap.fromTo(im,{yPercent:-6,scale:1.14},{yPercent:6,scale:1.14,ease:'none',scrollTrigger:{trigger:im.parentElement,start:'top bottom',end:'bottom top',scrub:true}});
     });
 
