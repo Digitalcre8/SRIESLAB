@@ -521,8 +521,9 @@ form{display:grid;gap:16px;background:var(--white);border-radius:20px;padding:cl
 .hx-row img[src$="p5.jpg"]{object-position:65% 50%}
 
 /* pinned tab sections: size the image to the screen so heading + panel fit together */
-html.anim .sys-img{max-height:min(640px,calc(100svh - 360px))}
-html.anim .wrap:has(> .sys) > .head{margin-bottom:clamp(28px,3.5vw,48px)}
+html.anim .sys-img{max-height:min(620px,calc(100svh - 420px))}
+.wrap:has(> .sys) > .head{margin-bottom:clamp(56px,6vw,96px)}
+html.anim .wrap:has(> .sys) > .head{margin-bottom:clamp(32px,min(5vw,7.5svh),80px)}
 
 /* contact page (Reforma Contact A) */
 .ct-hero{background:var(--stone);padding-block:clamp(48px,6vw,96px) clamp(56px,6vw,96px)}
@@ -594,3 +595,11 @@ html.anim.hx-done .hx-row{margin-top:clamp(48px,6vw,72px)}
 .lab-q{color:var(--paper);font-size:15px}
 @media (max-width:560px){.lab-total{grid-template-columns:1fr}.lab-tl ol{grid-template-columns:1fr;gap:18px}.lab-tl ol::before{left:6px;right:auto;top:6px;bottom:6px;width:1px;height:auto;background:linear-gradient(180deg,var(--sun),rgba(242,162,126,.25) 50%,var(--sun))}.lab-tl li{padding:0 0 0 28px}}
 .lab-b .text-2{color:var(--on-dark)}
+/* short screens: tighten the tab panel so the heading can stay in view with it */
+@media (max-height:820px) and (min-width:641px){
+  html.anim .sys-panel{gap:14px}
+  html.anim .sys-panel li{padding:9px 0 9px 22px}
+  html.anim .sys-panel li::before{top:16px}
+  html.anim .sys-tabs button{padding:14px 0}
+}
+@media (max-width:640px){html.anim .wrap:has(> .sys) > .head > p{display:none}}
