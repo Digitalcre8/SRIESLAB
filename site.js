@@ -58,6 +58,38 @@
       if(en.isIntersecting){var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});}else v.pause();});},{threshold:.15}).observe(v);}
   });
 
+
+  // guides: name and email unlock the PDF
+  (function(){
+    var KEY='sries-guide-ok';
+    function get(){try{return JSON.parse(localStorage.getItem(KEY)||'null');}catch(e){return null;}}
+    function put(v){try{if(v)localStorage.setItem(KEY,JSON.stringify(v));else localStorage.removeItem(KEY);}catch(e){}}
+    document.querySelectorAll('.gform').forEach(function(f){
+      var card=f.closest('.gd-card'),done=card.querySelector('.gd-done'),note=f.querySelector('.gd-note'),
+          nm=f.querySelector('[name=name]'),em=f.querySelector('[name=email]'),dl=done.querySelector('[data-gdl]'),hi=done.querySelector('[data-gname]');
+      function show(who,auto){
+        hi.textContent=who&&who.name?', '+who.name.split(' ')[0]:'';
+        f.hidden=true;done.hidden=false;
+        if(auto){var a=document.createElement('a');a.href=dl.getAttribute('href');a.download='';document.body.appendChild(a);a.click();a.remove();}
+      }
+      var known=get();
+      if(known){show(known,false);done.querySelector('p').textContent='You already shared your details, so this one is ready to download.';}
+      done.querySelector('.gd-reset').addEventListener('click',function(){put(null);done.hidden=true;f.hidden=false;nm.value='';em.value='';nm.focus();});
+      f.addEventListener('submit',function(e){
+        e.preventDefault();note.textContent='';
+        if(!nm.value.trim()){note.textContent='Please add your name.';nm.focus();return;}
+        if(!em.value.trim()||!em.checkValidity()){note.textContent='Please add a valid email address.';em.focus();return;}
+        var btn=f.querySelector('[type=submit]');btn.disabled=true;
+        var body=new URLSearchParams(new FormData(f)).toString();
+        var finish=function(){btn.disabled=false;var who={name:nm.value.trim(),email:em.value.trim()};put(who);show(who,true);};
+        // on the live site Netlify Forms stores the details; elsewhere the download still unlocks
+        if(window.fetch&&/^https?:/.test(location.protocol)){
+          fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body}).then(finish,finish);
+        } else finish();
+      });
+    });
+  })();
+
   var hasG=typeof window.gsap!=='undefined'&&typeof window.ScrollTrigger!=='undefined';
   var calm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var motion=hasG&&!calm;
@@ -167,7 +199,7 @@
 
     // blocks fade up in small groups
     var q=['.ph .sub','.ph .actions','.head .eb','.head > p','.head > .actions','.head-c .eb','.head-c p','.head-c .actions','.ccard','.box','.pkg','.ncard','.wcard','.stat','.tile',
-           '.person','.loc','.ct-card','.cs','.cs-meta > div','.cs-fig','.cs-q','.lab > *','.faq details','.spec','.checks li','.how .l > div:last-child','.prose > *','.toc','form','.fgrid > *','.appr .l > div','.ov-card','.statement > :not([data-words])','.vt .eb','.vt .actions','.cta .actions'].join(',');
+           '.person','.loc','.ct-card','.cs','.cs-meta > div','.cs-fig','.cs-q','.lab > *','.faq details','.spec','.checks li','.how .l > div:last-child','.prose > *','.toc','form','.fgrid > *','.appr .l > div','.ov-card','.statement > :not([data-words])','.vt .eb','.vt .actions','.cta .actions','.svx li','.stc-card','.hw-steps li','.hw-txt > .eb','.hw-txt > .link'].join(',');
     var items=[].slice.call(document.querySelectorAll(q)).filter(function(el){return !el.closest('#hx');});
     gsap.set(items,{opacity:0,y:40});
     ScrollTrigger.batch(items,{start:'top 92%',once:true,onEnter:function(batch){gsap.to(batch,{opacity:1,y:0,duration:1.05,ease:EASE,stagger:.08,overwrite:true,clearProps:'transform'});}});
@@ -184,7 +216,7 @@
     });
 
     // slow parallax inside image frames
-    document.querySelectorAll('.cs-fig img, .feat .img img, .ph-img img, .ov-img img, .ov-img video, .cta > img, .cta > video, .vt > img, .vt > video, .how .img img, .how .img video, .ac img, .stat.img > img').forEach(function(im){
+    document.querySelectorAll('.cs-fig img, .feat .img img, .ph-img img, .ov-img img, .ov-img video, .cta > img, .cta > video, .vt > img, .vt > video, .how .img img, .how .img video, .hw-media video, .ac img, .stat.img > img').forEach(function(im){
       gsap.fromTo(im,{yPercent:-6,scale:1.14},{yPercent:6,scale:1.14,ease:'none',scrollTrigger:{trigger:im.parentElement,start:'top bottom',end:'bottom top',scrub:true}});
     });
 
