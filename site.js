@@ -97,7 +97,7 @@
   // dark tabbed panels (click or arrow keys; with motion on they also step through as you scroll)
   var SYSTEMS=[];
   document.querySelectorAll('[data-system]').forEach(function(sys){
-    var bs=[].slice.call(sys.querySelectorAll('[role=tab]')),ims=[].slice.call(sys.querySelectorAll('.sys-img img')),
+    var bs=[].slice.call(sys.querySelectorAll('[role=tab]')),ims=[].slice.call(sys.querySelectorAll('.sys-img > img, .sys-img > .ico-tile')),
         pns=bs.map(function(x){return document.getElementById(x.getAttribute('aria-controls'));}),cur=sys.querySelector('[data-cur]'),idx=0;
     var o={el:sys,n:bs.length,st:null};
     o.set=function(i){
