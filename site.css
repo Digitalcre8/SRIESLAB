@@ -757,27 +757,28 @@ html.anim .wrap:has(> .stg) > .head{margin-bottom:clamp(32px,min(5vw,7svh),72px)
 .dark,.lab-b,.cta,.vt,.hx-fill,.btn-dark,.svx a:hover,.svx a:focus-visible{--accent-t:var(--accent)}
 .dark .btn-white,.cta .btn-white,.vt .btn-white,.lab-b .btn-white{--accent-t:#9A6100}
 
-/* ---------- icon tiles (replace photos where a slot illustrates an idea) ---------- */
-.ico{display:block;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
-.ico .ac{stroke:var(--accent)}
-.ico-tile{position:relative;display:grid;place-items:center;background-color:var(--ink);color:var(--paper);
-  background-image:radial-gradient(rgba(247,247,242,.09) 1px,transparent 1.2px);background-size:22px 22px;background-position:11px 11px;overflow:hidden}
-.ico-tile .ico{width:clamp(64px,32%,150px);height:auto;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
-.feat .img.ic{border-radius:12px}
-.feat .img.ic .ico-tile{width:100%;height:100%}
-.feat:hover .ico-tile .ico,.ccard:hover .ico-tile .ico{transform:translateY(-4px) scale(1.04)}
-.ccard.ic{background:var(--ink)}
-.ccard.ic .ico-tile{position:absolute;inset:0;place-items:start center;padding-top:clamp(28px,12%,72px)}
-.ccard.ic .ico-tile .ico{width:clamp(64px,26%,120px)}
-.ccard.ic .bar{background:var(--ink-2);border:1px solid var(--line-dk)}
-.qi.ic .ico-tile{width:100%;height:100%;background-color:var(--ink-2)}
-.qi.ic .ico-tile .ico{width:clamp(72px,26%,120px)}
-.sys-img .sys-ic{position:absolute;inset:0;opacity:0;transform:scale(1.04);transition:opacity .7s ease,transform 1.2s cubic-bezier(.2,.7,.2,1);background-color:var(--ink-2)}
-.sys-img .sys-ic.on{opacity:1;transform:none}
-.sys-img .sys-ic .ico{width:clamp(80px,34%,170px)}
-.dd-feat.ic{background-color:var(--ink);background-image:radial-gradient(rgba(247,247,242,.09) 1px,transparent 1.2px);background-size:18px 18px;justify-content:space-between}
+/* ---------- icon tiles: light cards, small black line icon top-left ---------- */
+.ico{display:block;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.ico .ac{stroke:currentColor}
+.ico-tile{position:relative;display:flex;align-items:flex-start;justify-content:flex-start;padding:clamp(22px,2.4vw,32px);background:#F4F3F1;color:var(--ink);border:1px solid #E7E4DF;border-radius:20px;overflow:hidden}
+.ico-tile .ico{width:44px;height:44px;flex:none;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.feat .img.ic{border-radius:20px;background:none}
+.feat .img.ic .ico-tile{width:100%;height:100%;background:var(--white)}
+.feat:hover .ico-tile .ico,.ccard:hover .ico-tile .ico,.dd-feat.ic:hover .ico{transform:translateY(-2px)}
+.ccard.ic{background:#F4F3F1;border:1px solid #E7E4DF;color:var(--ink);display:flex;flex-direction:column;justify-content:space-between;padding:clamp(22px,2.4vw,32px)}
+.ccard.ic .ico-tile{position:static;padding:0;background:none;border:0;border-radius:0}
+.ccard.ic .bar{position:static;background:none;border:0;padding:0;color:var(--ink)}
+.ccard.ic .bar h3{color:var(--ink)}
+.ccard.ic .bar p{color:var(--text-2)}
+.qi.ic{background:none}
+.qi.ic .ico-tile{width:100%;height:100%;background:var(--white)}
+.sys-img:has(.sys-ic){background:#F4F3F1;border:1px solid #E7E4DF}
+.sys-img .sys-ic{position:absolute;inset:0;border:0;border-radius:0;opacity:0;transition:opacity .5s ease}
+.sys-img .sys-ic.on{opacity:1}
+.sys-img .sys-ic .ico{width:52px;height:52px}
+.dd-feat.ic{background:#F4F3F1;border:1px solid #E7E4DF;color:var(--ink);justify-content:space-between}
 .dd-feat.ic::after{display:none}
-.dd-feat.ic .ico{width:56px;height:56px;color:var(--paper);transition:transform .6s cubic-bezier(.2,.7,.2,1)}
-.dd-feat.ic:hover .ico{transform:translateY(-3px)}
-.dd-feat.ic .ico + .mono{margin-top:auto}
+.dd-feat.ic .ico{width:36px;height:36px;color:var(--ink)}
+.dd-feat.ic .mono{color:var(--text-2)}
+.dd-feat.ic b{color:var(--ink)}
 @media (prefers-reduced-motion:reduce){.ico-tile .ico,.dd-feat.ic .ico{transition:none}}
