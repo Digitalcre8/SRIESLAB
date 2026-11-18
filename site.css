@@ -855,3 +855,18 @@ html.anim .wrap:has(> .stg) > .head{margin-bottom:clamp(32px,min(5vw,7svh),72px)
 .vg-av i{aspect-ratio:1;border-radius:50%;background:var(--g1);position:relative;overflow:hidden}
 .vg-av i::after{content:"";position:absolute;left:30%;right:30%;top:22%;aspect-ratio:1;border-radius:50%;background:var(--g2);box-shadow:0 34cqmin 0 18cqmin var(--g2)}
 .vg-av i.k{background:var(--g2)}.vg-av i.k::after{background:var(--g3);box-shadow:0 34cqmin 0 18cqmin var(--g3)}
+
+/* ---------- brand yellow: one highlight per icon and data card ---------- */
+.ico .ac{stroke:var(--accent)}
+.vg{--y:var(--accent);--y-soft:#FCE3B4}
+.vg-slides i.k,.vg-tr i.k,.vg-sw i.k{background:var(--y)}
+.vg-bars .c.k i{background:var(--y)}
+.vg-bars.four .c.k i{background:var(--y-soft)}
+.vg-bars.four .c.k i::after{background:var(--y)}
+.vg-checks li::before{background-color:var(--y-soft);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.3l2.2 2.2 4.8-4.8' fill='none' stroke='%23191818' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.vg-claim em{color:var(--ink);background:var(--y-soft);padding:3px 5px;border-radius:4px}
+.vg-qa .a span{background:var(--y);color:var(--ink)}
+.vg-moa .k{fill:var(--y-soft);stroke:var(--y)}
+.vg-av i.k{background:var(--y-soft)}.vg-av i.k::after{background:var(--y);box-shadow:0 34cqmin 0 18cqmin var(--y)}
+.vg-big b::after{content:"";display:block;width:clamp(18px,7cqmin,34px);height:3px;border-radius:2px;background:var(--y);margin-top:3.2cqmin}
+.dd-feat.ic .ico .ac{stroke:var(--accent)}
