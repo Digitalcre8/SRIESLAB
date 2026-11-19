@@ -910,3 +910,13 @@ html:not(.anim) .hx.full .hx-stage::after,html.anim.hx-done .hx.full .hx-stage::
 html.anim .hx.full .hx-shade{opacity:.5}
 
 .vt > img[src$="why-deck.jpg"]{object-position:60% 50%}
+
+/* ongoing support page */
+.sp-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.sp-card{display:flex;flex-direction:column;gap:10px;min-height:280px;padding:clamp(22px,2.4vw,32px);background:#F4F3F1;border:1px solid #E7E4DF;border-radius:20px}
+.sp-card .ico{width:40px;height:40px;flex:none;margin-bottom:auto}
+.sp-card .mono{color:var(--text-2);margin-top:28px}
+.sp-card h3{font-size:clamp(20px,1.6vw,24px);margin:0}
+.sp-card p{margin:0;color:var(--text-2);font-size:15px}
+@media (max-width:1000px){.sp-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.sp-grid{grid-template-columns:1fr}.sp-card{min-height:0}}
