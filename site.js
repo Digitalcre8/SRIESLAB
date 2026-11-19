@@ -216,7 +216,7 @@
     });
 
     // slow parallax inside image frames
-    document.querySelectorAll('.cs-fig img, .feat .img img, .ph-img img, .ov-img img, .ov-img video, .cta > img, .cta > video, .vt > img, .vt > video, .how .img img, .how .img video, .hw-media video, .ac img, .stat.img > img').forEach(function(im){
+    document.querySelectorAll('.cs-fig img, .feat .img img, .ph-img img, .ov-img img, .ov-img video, .cta > img, .cta > video, .vt > img, .vt > video, .how .img img, .how .img video, .hw-media video, .hw-media img, .ac img, .stat.img > img').forEach(function(im){
       gsap.fromTo(im,{yPercent:-6,scale:1.14},{yPercent:6,scale:1.14,ease:'none',scrollTrigger:{trigger:im.parentElement,start:'top bottom',end:'bottom top',scrub:true}});
     });
 
