@@ -882,3 +882,7 @@ html.anim .wrap:has(> .stg) > .head{margin-bottom:clamp(32px,min(5vw,7svh),72px)
 
 /* homepage How we work: team photo in the original 4:5 frame */
 .hw-media.photo img{width:100%;height:100%;object-fit:cover;object-position:75% 50%;display:block}
+
+/* hero with a single image that grows to fill the screen on scroll */
+.hx-row.one figure[data-origin],html.anim .hx-row.one figure[data-origin]{width:min(100%,clamp(320px,68vw,1040px));height:auto;aspect-ratio:16/10;margin-top:0}
+@media (max-width:760px){.hx-row.one figure[data-origin],html.anim .hx-row.one figure[data-origin]{width:100%;aspect-ratio:4/3}}

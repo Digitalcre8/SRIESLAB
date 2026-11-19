@@ -169,8 +169,8 @@
             if(hasSplit&&h1._words)gsap.fromTo(h1._words,{opacity:.12},{opacity:1,duration:.8,ease:'power2.out',stagger:.12});
           });});});
       }});
+      if(sides.length)tl.to(sides,{opacity:0,y:40,duration:.22,stagger:{each:.025,from:'center'},ease:'none'},0);
       tl.to(head,{y:-90,opacity:0,duration:.2,ease:'none'},0)
-        .to(sides,{opacity:0,y:40,duration:.22,stagger:{each:.025,from:'center'},ease:'none'},0)
         .fromTo(fill,{left:function(){return R().l;},top:function(){return R().t;},width:function(){return R().w;},height:function(){return R().h;},borderRadius:20},
                      {left:0,top:0,width:function(){return stage.clientWidth;},height:function(){return stage.clientHeight;},borderRadius:0,duration:.34,ease:'power2.inOut'},.1)
         .fromTo(fill.querySelector('img,video'),{scale:1.25},{scale:1,duration:.34,ease:'power2.inOut'},.1)
