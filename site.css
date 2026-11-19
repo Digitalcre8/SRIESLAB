@@ -908,3 +908,5 @@ html:not(.anim) .hx.full .hx-stage::after,html.anim.hx-done .hx.full .hx-stage::
 .hx.full .hx-fill{z-index:3}
 .hx.full .hx-lines{z-index:6}
 html.anim .hx.full .hx-shade{opacity:.5}
+
+.vt > img[src$="why-deck.jpg"]{object-position:60% 50%}
