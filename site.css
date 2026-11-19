@@ -872,4 +872,4 @@ html.anim .wrap:has(> .stg) > .head{margin-bottom:clamp(32px,min(5vw,7svh),72px)
 .dd-feat.ic .ico .ac{stroke:var(--accent)}
 
 /* About header photo: keep both faces in the wide crop */
-.ph-img img[src$="about-hero.jpg"]{object-position:50% 26%}
+.ph-img img[src$="about-team.jpg"]{object-position:50% 34%}
