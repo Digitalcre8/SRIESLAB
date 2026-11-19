@@ -886,3 +886,11 @@ html.anim .wrap:has(> .stg) > .head{margin-bottom:clamp(32px,min(5vw,7svh),72px)
 /* hero with a single image that grows to fill the screen on scroll */
 .hx-row.one figure[data-origin],html.anim .hx-row.one figure[data-origin]{width:min(100%,clamp(320px,68vw,1040px));height:auto;aspect-ratio:16/10;margin-top:0}
 @media (max-width:760px){.hx-row.one figure[data-origin],html.anim .hx-row.one figure[data-origin]{width:100%;aspect-ratio:4/3}}
+
+/* hero with three images: the centre one zooms to fill the screen on scroll */
+.hx-row.three{gap:clamp(12px,1.4vw,20px)}
+.hx-row.three figure,html.anim .hx-row.three figure{height:clamp(260px,52svh,480px);aspect-ratio:4/5}
+.hx-row.three figure[data-origin]{margin-top:28px}
+.hx-row.three figure:not([data-origin]){margin-top:0}
+.hx-row.three img[src$="how-team.jpg"]{object-position:48% 50%}
+@media (max-width:760px){html.anim .hx-row.three figure,.hx-row.three figure{height:clamp(220px,42svh,340px)}}
