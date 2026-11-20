@@ -947,3 +947,5 @@ html.anim .hx.full .hx-shade{opacity:.5}
 a.circle{text-decoration:none}
 .circle svg{display:block;transition:transform .25s}
 .circle:hover svg{transform:translateX(2px)}
+
+.ov-img img[src$="about-sofa.jpg"]{object-position:50% 30%}
