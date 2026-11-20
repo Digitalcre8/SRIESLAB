@@ -512,7 +512,7 @@ form{display:grid;gap:16px;background:var(--white);border-radius:20px;padding:cl
 .logos-track{display:flex;align-items:center;gap:80px;width:max-content;animation:mq 30s linear infinite;padding-right:80px}
 .logos:hover .logos-track{animation-play-state:paused}
 .logos-track > *{flex:none;height:32px;display:flex;align-items:center}
-.logos-track img{height:32px;width:auto;max-width:160px;object-fit:contain;opacity:.8}
+.logos-track img{height:32px;width:auto;max-width:150px;object-fit:contain;opacity:.75}
 .logo-slot{height:32px;padding:0 14px;border-radius:6px;border:1px dashed #B8901A;background:rgba(255,205,50,.28);font:12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
 .logos-cap{text-align:center;font-size:14px;color:var(--text-2);margin-bottom:28px}
 /* hero photo framing */
