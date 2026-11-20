@@ -931,3 +931,14 @@ html.anim .hx.full .hx-shade{opacity:.5}
 .ph-img img[src$="services-hero.jpg"]{object-position:55% 42%}
 
 .ph-img img[src$="studio-hero-2.jpg"]{object-position:50% 30%}
+
+/* Studio: our network as three equal cards */
+.nw-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.nw-card{display:flex;flex-direction:column;background:var(--ink-2);border:1px solid var(--line-dk);border-radius:20px;overflow:hidden}
+.nw-vis{aspect-ratio:4/3;padding:12px}
+.nw-vis .vg-card{border-radius:14px}
+.nw-txt{display:grid;gap:8px;padding:clamp(20px,2vw,28px);padding-top:12px}
+.nw-txt .mono{color:var(--accent)}
+.nw-txt h3{font-size:clamp(20px,1.6vw,24px);color:var(--paper);margin:0}
+.nw-txt p{margin:0;color:var(--on-dark);font-size:15px}
+@media (max-width:900px){.nw-grid{grid-template-columns:1fr}.nw-vis{aspect-ratio:16/10}}
