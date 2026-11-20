@@ -927,3 +927,5 @@ html.anim .hx.full .hx-shade{opacity:.5}
 @media (max-width:760px){.hx-row.one figure[data-origin],html.anim .hx-row.one figure[data-origin]{height:clamp(260px,46svh,420px)}}
 
 .ph-img img[src$="about-meeting.jpg"]{object-position:58% 56%}
+
+.ph-img img[src$="services-hero.jpg"]{object-position:55% 42%}
