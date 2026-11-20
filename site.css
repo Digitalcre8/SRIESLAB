@@ -926,4 +926,4 @@ html.anim .hx.full .hx-shade{opacity:.5}
 .hx-row.one figure[data-origin],html.anim .hx-row.one figure[data-origin]{width:min(100%,1400px);aspect-ratio:auto;height:clamp(300px,58svh,640px)}
 @media (max-width:760px){.hx-row.one figure[data-origin],html.anim .hx-row.one figure[data-origin]{height:clamp(260px,46svh,420px)}}
 
-.ph-img img[src$="about-meeting.jpg"]{object-position:58% 42%}
+.ph-img img[src$="about-meeting.jpg"]{object-position:58% 56%}
