@@ -406,7 +406,8 @@ details p{padding:0 24px 24px;color:var(--text-2);max-width:64ch}
 .person .role{color:var(--text-2)}
 .person p{color:var(--text-2);font-size:15px}
 @media (max-width:900px){.team{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.team{grid-template-columns:1fr}}
+.team.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:880px}
+@media (max-width:560px){.team,.team.two{grid-template-columns:1fr}}
 .phx{background:rgba(255,205,50,.42);outline:1px dashed #B8901A;outline-offset:1px;padding:0 4px;border-radius:3px}
 .spec{width:100%;border-collapse:collapse;background:var(--white);border-radius:20px;overflow:hidden}
 .spec th,.spec td{text-align:left;padding:20px 24px;border-bottom:1px solid var(--line);vertical-align:top}
