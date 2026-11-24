@@ -930,7 +930,7 @@ html.anim .hx.full .hx-shade{opacity:.5}
 
 .ph-img img[src$="services-hero.jpg"]{object-position:55% 42%}
 
-.ph-img img[src$="studio-hero-2.jpg"]{object-position:50% 30%}
+.ph-img img[src$="studio-hero-3.jpg"]{object-position:62% 35%}
 
 /* Studio: our network as three equal cards */
 .nw-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
@@ -949,3 +949,4 @@ a.circle{text-decoration:none}
 .circle:hover svg{transform:translateX(2px)}
 
 .ov-img img[src$="about-sofa.jpg"]{object-position:50% 30%}
+@media (max-width:640px){.ph-img img[src$="studio-hero-3.jpg"]{object-position:72% 40%}}
