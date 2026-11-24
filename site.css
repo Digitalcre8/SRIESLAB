@@ -406,9 +406,8 @@ details p{padding:0 24px 24px;color:var(--text-2);max-width:64ch}
 .person .role{color:var(--text-2)}
 .person p{color:var(--text-2);font-size:15px}
 @media (max-width:900px){.team{grid-template-columns:1fr 1fr}}
-.team.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:880px;margin-inline:auto}
 .head.team-head{justify-content:center;text-align:center}.head.team-head .l{margin-inline:auto}.head.team-head .eb{justify-content:center}
-@media (max-width:560px){.team,.team.two{grid-template-columns:1fr}}
+@media (max-width:560px){.team{grid-template-columns:1fr}}
 .phx{background:rgba(255,205,50,.42);outline:1px dashed #B8901A;outline-offset:1px;padding:0 4px;border-radius:3px}
 .spec{width:100%;border-collapse:collapse;background:var(--white);border-radius:20px;overflow:hidden}
 .spec th,.spec td{text-align:left;padding:20px 24px;border-bottom:1px solid var(--line);vertical-align:top}
@@ -955,3 +954,12 @@ a.circle{text-decoration:none}
 
 .ph-img img[src$="about-office.jpg"]{object-position:55% 100%}
 @media (max-width:640px){.ph-img img[src$="about-office.jpg"]{object-position:58% 65%}}
+
+.join-card{color:inherit;text-decoration:none}
+.portrait.join-tile{background:var(--ink);color:var(--paper);position:relative;overflow:hidden;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.portrait.join-tile:before{content:'';position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,var(--glow-b),transparent 65%);opacity:.35;right:-18%;top:-14%;filter:blur(10px)}
+.jt-in{position:relative;display:grid;justify-items:center;gap:22px;padding:0 14%;text-align:center}
+.jt-plus{width:76px;height:76px;border-radius:50%;background:var(--accent);color:var(--ink);display:grid;place-items:center;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.jt-cap{font-size:15px;line-height:1.45;color:var(--on-dark)}
+.join-card:hover .jt-plus{transform:rotate(90deg) scale(1.06)}
+.join-card .link{margin-top:4px}
