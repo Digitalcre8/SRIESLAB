@@ -406,7 +406,7 @@ details p{padding:0 24px 24px;color:var(--text-2);max-width:64ch}
 .person .role{color:var(--text-2)}
 .person p{color:var(--text-2);font-size:15px}
 @media (max-width:900px){.team{grid-template-columns:1fr 1fr}}
-.head.team-head{justify-content:center;text-align:center}.head.team-head .l{margin-inline:auto}.head.team-head .eb{justify-content:center}
+
 @media (max-width:560px){.team{grid-template-columns:1fr}}
 .phx{background:rgba(255,205,50,.42);outline:1px dashed #B8901A;outline-offset:1px;padding:0 4px;border-radius:3px}
 .spec{width:100%;border-collapse:collapse;background:var(--white);border-radius:20px;overflow:hidden}
