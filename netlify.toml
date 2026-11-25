@@ -1,3 +1,15 @@
 [build]
   publish = "."
   command = ""
+
+[[redirects]]
+  from = "/studio"
+  to = "/packages"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/studio.html"
+  to = "/packages.html"
+  status = 301
+  force = true
