@@ -298,11 +298,11 @@ html.anim .sys.pinned .sys-hint{display:inline}
 @media (max-width:620px){.ngrid{grid-template-columns:1fr}}
 
 /* where now cards */
-.wn{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:16px}
+.wn{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:16px}
 .wcard{background:var(--card);border-radius:20px;min-height:360px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;text-decoration:none;transition:background .3s}
 .wcard:hover{background:#E1DCD5}
 .wcard h3{font-family:var(--serif);font-weight:300;font-size:clamp(26px,2.4vw,34px);letter-spacing:-.04em;line-height:1.12;max-width:14ch}
-@media (max-width:900px){.wn{grid-template-columns:1fr}.wcard{min-height:240px}}
+@media (max-width:900px){.wn{grid-auto-flow:row;grid-template-columns:1fr}.wcard{min-height:240px}}
 
 /* image CTA */
 .cta{position:relative;border-radius:20px;overflow:hidden;min-height:clamp(480px,46vw,640px);display:grid;place-items:center;text-align:center;color:var(--paper);padding:48px 20px}
