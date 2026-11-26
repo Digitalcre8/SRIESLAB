@@ -1006,3 +1006,15 @@ a.circle{text-decoration:none}
 .hw-steps.long p{margin:0;color:var(--text-2);font-size:15.5px;line-height:1.55}
 .dark .story p{color:var(--on-dark)}
 .dark .story p.lead{color:var(--paper)}
+.feat .b .inc-h{display:block;color:var(--muted);margin:18px 0 -4px}
+.feat .b .timing{display:flex;gap:12px;align-items:baseline;margin:4px 0 0;font-size:15px}
+.feat .b .timing .mono{color:var(--accent-t)}
+.feat .b ul a{color:inherit}
+.pq.sm{justify-items:start;text-align:left;gap:14px;margin:8px 0 6px;padding:20px 22px;border-left:3px solid var(--accent);background:rgba(0,0,0,.03);border-radius:0 12px 12px 0;max-width:none}
+.pq.sm:before{display:none}
+.pq.sm blockquote p{font-size:16px;line-height:1.55;letter-spacing:0}
+.pq.sm figcaption{font-size:14px}
+.spec-line{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0}
+.spec-line p{margin:0;max-width:60ch;font-size:clamp(17px,1.4vw,20px);line-height:1.45}
+.stg-note{color:var(--on-dark);max-width:70ch;margin:32px 0 0;font-size:16px;line-height:1.55}
+.stg-inc .link{margin-top:18px;display:inline-flex}
