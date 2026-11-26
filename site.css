@@ -986,3 +986,23 @@ a.circle{text-decoration:none}
 .ct-intro .sub + .sub{margin-top:-8px}
 .fl .ftag.sm{font-size:16px;line-height:1.45;color:var(--text-2);max-width:40ch}
 #dd-studio .dd-feat{min-height:0}
+.hx-sub{max-width:52ch;color:var(--text-2);font-size:clamp(16px,1.3vw,19px);line-height:1.5;margin:18px auto 22px;text-wrap:balance}
+.hx-head .actions{margin-bottom:8px}
+.appr-p{color:var(--on-dark);font-size:17px;line-height:1.6;margin:0;max-width:52ch}
+.tiles.three .tile.wide{grid-column:1/-1;min-height:0}
+.tiles.three .tile .mono{text-transform:none;letter-spacing:0;font-family:inherit;font-size:15px;line-height:1.45;max-width:36ch}
+.svx.long a{align-items:start}
+.svx.long .n{font-size:clamp(26px,2.6vw,40px)}
+.svx.long .d{max-width:58ch;font-size:15.5px;line-height:1.55}
+.svx.long .go{align-self:center}
+@media (max-width:900px){.svx.long a{grid-template-columns:48px 1fr;gap:12px 16px}.svx.long .d{grid-column:2}.svx.long .go{display:none}}
+.callout{background:var(--paper-2,#ECEAE5);border-radius:20px;padding:clamp(32px,5vw,72px);display:grid;gap:18px;justify-items:start}
+.callout h2{margin:0;max-width:20ch}
+.callout p{margin:0;max-width:70ch;font-size:clamp(17px,1.35vw,20px);line-height:1.55;color:var(--text-2)}
+.pq-note{color:var(--muted);font-size:14px;margin-top:6px}
+.hw-steps.long li{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start;font:inherit;letter-spacing:0}
+.hw-steps.long .k{padding-top:5px}
+.hw-steps.long b{font-weight:500;font-size:19px;display:block;margin-bottom:6px}
+.hw-steps.long p{margin:0;color:var(--text-2);font-size:15.5px;line-height:1.55}
+.dark .story p{color:var(--on-dark)}
+.dark .story p.lead{color:var(--paper)}

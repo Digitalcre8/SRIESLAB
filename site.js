@@ -211,8 +211,8 @@
 
     // figures count up
     document.querySelectorAll('[data-count]').forEach(function(el){
-      var to=+el.dataset.count,pre=el.dataset.prefix||'',o={v:0};el.textContent=pre+'0';
-      gsap.to(o,{v:to,duration:1.8,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%',once:true},onUpdate:function(){el.textContent=pre+Math.round(o.v);}});
+      var to=+el.dataset.count,pre=el.dataset.prefix||'',suf=el.dataset.suffix||'',o={v:0};el.textContent=pre+'0'+suf;
+      gsap.to(o,{v:to,duration:1.8,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%',once:true},onUpdate:function(){el.textContent=pre+Math.round(o.v)+suf;}});
     });
 
     // slow parallax inside image frames
